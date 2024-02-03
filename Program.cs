@@ -1,14 +1,14 @@
 ﻿// lesson 7 recursion
-void GetNaturalNumbersBetween(int n, int m)
+void PrintNaturalNumbersBetween(int n, int m)
 {
     if (n < m + 1)
     {
         Console.Write($"{n}, ");
-        GetNaturalNumbersBetween(n + 1, m);
+        PrintNaturalNumbersBetween(n + 1, m);
     }
     return;
 }
-int [] MakeRndIntArr(int size)
+int [] CreateRndIntArr(int size)
 {
     Random rnd = new Random();
     int [] arr = new int [size];
@@ -55,7 +55,7 @@ while(task != 4)
         int n = Convert.ToInt32(Console.ReadLine());
         Console.WriteLine("Введите окончание интервала");
         int m = Convert.ToInt32(Console.ReadLine());
-        GetNaturalNumbersBetween(n, m);
+        PrintNaturalNumbersBetween(n, m);
         Console.WriteLine();
     }
     //task 3
@@ -63,8 +63,8 @@ while(task != 4)
     {
         Console.WriteLine("Введите размер массива ");
         int arrsize = Convert.ToInt32(Console.ReadLine());
-        int [] arr = MakeRndIntArr(arrsize);
-        Console.WriteLine("сгенерированный массив ");
+        int [] arr = CreateRndIntArr(arrsize);
+        Console.WriteLine($"сгенерированный массив: ");
         ArrPrint(arr);
         Console.WriteLine("реверс массива");
         int i = 0;
