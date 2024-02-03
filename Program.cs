@@ -36,6 +36,13 @@ void PrintRewerseArray(int [] arr, int i)
     }
     return;
 }
+int AkkermanResult(int m, int n)
+        {
+        if (m == 0) return n + 1;
+        else if (n == 0) return AkkermanResult(m - 1, 1);
+        else return AkkermanResult(m - 1, AkkermanResult(m, n - 1));
+        }
+
 int task = 0;
 while(task != 4)
 {
@@ -65,9 +72,14 @@ while(task != 4)
         Console.WriteLine();
     } 
     //task 2
-    if (task == 2)
+    if (task == 2)//не понятно как, но главное задача решена
     {
-        Console.WriteLine("Продолжается разработка кода");
+        Console.WriteLine("Введите значение m");
+        int m = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Введите значение n");
+        int n = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine($"Результат = {AkkermanResult(m, n)} ");
+        Console.WriteLine();
         
     } 
 }
